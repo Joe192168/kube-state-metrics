@@ -1,6 +1,7 @@
 ARG GOVERSION=1.22
 ARG GOARCH
-FROM golang:${GOVERSION} as builder
+ARG GOARCH=adm64
+FROM registry.cn-qingdao.aliyuncs.com/joe0519/kube-state-metrics:1.22 as builder
 ARG GOARCH
 ENV GOARCH=${GOARCH}
 WORKDIR /go/src/k8s.io/kube-state-metrics/
